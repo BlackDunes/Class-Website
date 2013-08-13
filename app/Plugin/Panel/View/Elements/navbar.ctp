@@ -1,17 +1,20 @@
 <div id="navigation">
-<?php $counter = 1; ?>
-<?php foreach ($theModels as $model): ?>
-	<div class="navElement 
-<?php if ($counter % 2 == 0): ?>
-<?php echo "nav1" ?>
-<?php else: ?>
-<?php echo "nav2" ?>
-<?php endif; ?>
-<?php ++$counter; ?>"> 
-<?php echo $this->Html->link($model,
-array('controller' => $model, 'action' => 'index')); ?>
+	<div class="navElement">
+<?php echo $this->Html->link('Books',
+'/panel/books'); ?>
 </div>
-<?php endforeach; ?>
+	<div class="navElement">
+<?php echo $this->Html->link('Courses & Periods',
+'/panel/courses'); ?>
+</div>
+	<div class="navElement">
+<?php echo $this->Html->link('Materials',
+'/panel/materials'); ?>
+</div>
+	<div class="navElement">
+<?php echo $this->Html->link('Units',
+'/panel/books'); ?>
+</div>
 <div class="navElement">
 	<?php echo $this->Html->link('Log Out',
 '/users/logout'); ?>

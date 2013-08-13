@@ -237,7 +237,9 @@ img.bookCover {
 }
 
 .dayHeaderLeft {
-	padding: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	float: left;
 	font-weight: 600;
 }
@@ -245,7 +247,7 @@ img.bookCover {
 .dayHeaderRight {
 	padding-top: 5px;
 	height: 35px;
-	width: 44px;
+	width: 35px;
 	float: right;
 	color: #EDEDED;
 	font-size: 25px;

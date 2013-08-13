@@ -403,31 +403,39 @@ img.bookCover {
 }
 
 /** Edit Day Page (for period) **/
+/** Some shared with materials page **/
 
 .periodDayHolder {
 	font-weight: 600;
-	font-size: 20px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	background: #FAFAFA;
-	width: 650px;
+	width: 310px;
 	border-radius: 3px;
 	padding: 10px;
 	margin-top: 20px;
-	}
+	float: left;
+}
+
+.periodDayHolder + .periodDayHolder {
+	margin-left: 10px;
+}
+
+.periodDayHead {
+	font-size: 20px;
+}
 
 .periodDayItem {
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 10px;
-	width: 610px;
+	width: 270px;
 	border-radius: 3px;
 	background: #E3E3E3;
 	text-transform: none;
 	letter-spacing: 0px;
 	font-weight: 400;
-	font-size: 16px;
 }
 
 .periodDayItemBlank {
@@ -435,15 +443,32 @@ img.bookCover {
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 10px;
-	width: 610px;
+	width: 295px;
 	border-radius: 3px;
 	color: #BD1E1E;
 	text-transform: none;
 	letter-spacing: 0px;
 	font-weight: 600;
-	font-size: 16px;
 }
 
+/** materials management page **/
+
+.mCatHolder {
+	width: 280px;
+	padding: 5px;
+	margin-top: 5px;
+	text-transform: none;
+	letter-spacing: 0px;
+	border-top: 1px solid #E3E3E3;
+}
+
+.mCatIcon {
+	float: left;
+	height: 20px;
+	width: 20px;
+	padding-right: 3px;
+	padding-top: 2px;
+}
 
 /** Period Page Calendar **/
 
@@ -830,7 +855,7 @@ fieldset fieldset div {
 }
 form div {
 	clear: both;
-	margin-bottom: 1em;
+	margin-bottom: 0em;
 	padding: .5em;
 	vertical-align: text-top;
 }
@@ -848,7 +873,6 @@ form .required label:after {
 form div.submit {
 	border: 0;
 	clear: both;
-	margin-top: 10px;
 }
 label {
 	display: block;
