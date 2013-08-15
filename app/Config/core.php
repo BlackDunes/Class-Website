@@ -21,7 +21,8 @@
  */
 
 	define("BASE_URL", "http://localhost/classsite/");
-	define("UPLOADS_DIR", "/Applications/XAMPP/htdocs/classsite/app/webroot/img/uploads/");
+	define("IMG_UPLOADS_DIR", "/Applications/XAMPP/htdocs/classsite/app/webroot/img/uploads/");
+	define("FILE_UPLOADS_DIR", "/Applications/XAMPP/htdocs/classsite/app/webroot/files/uploads/");
 
 /**
  * CakePHP Debug Level:

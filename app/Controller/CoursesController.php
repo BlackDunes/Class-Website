@@ -2,7 +2,7 @@
 class CoursesController extends AppController {
 	public $helpers = array('Html', 'Form');
 	public function index() {
-		$this->set('courses', $this->Course->find('all'));
+		$this->set('courses', $this->Course->find('all', array('conditions' => array('Course.active' => 1))));
 
 		$todayWeekDay = date('N');
     	$thisWeek = date('W');

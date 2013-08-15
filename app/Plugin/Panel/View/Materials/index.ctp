@@ -3,11 +3,16 @@
 </div>
 <div class="periodDayHolder">
 		<span class="periodDayHead">Add Materials</span><br />
-		Choose a course
-		<?php foreach ($courses as $courses): ?>
+		Choose a unit
+		<?php foreach ($courses as $course): ?>
 		<div class="periodDayItem">
-			<?php echo $this->Html->link($courses['Courses']['name'],
-'/panel/materials/add/'.$courses['Courses']['id']); ?>
+			<?php echo $course['Course']['name']; ?>
+			<?php foreach ($course['Unit'] as $unit): ?>
+			<div class="mUnitHolder<?php if ($unit['id'] == $course['Course']['active_unit']) { echo ' holderActive'; } ?>">
+				<?php echo $this->Html->link($unit['name'], '/panel/materials/add/'. $unit['id']); ?>
+			</div>
+			<?php endforeach; ?>
+
 		</div>
 		<?php endforeach; ?>
 </div>
@@ -16,14 +21,14 @@
 	<?php foreach ($categories as $categories): ?>
 	<div class="mCatHolder">
 		<div class="mCatIcon">
-			<?php echo $this->Html->image('uploads/mcat/'.$categories['MCategories']['icon'], array('alt' => $categories['MCategories']['name'])); ?>
+			<?php echo $this->Html->image('uploads/mcat/'.$categories['MCategory']['icon'], array('alt' => $categories['MCategory']['name'])); ?>
 		</div>
-		<span style="color: #<?php echo $categories['MCategories']['color']; ?>">
-		<?php echo $categories['MCategories']['name']; ?>
+		<span style="color: #<?php echo $categories['MCategory']['color']; ?>">
+		<?php echo $categories['MCategory']['name']; ?>
 		</span>
 	</div>
 	<?php endforeach; ?>
-	<div class="periodDayItem">
+	<div class="adminButton">
 		<?php echo $this->Html->link('Add a Category', '/panel/m_categories/add/'); ?>
 	</div>
 </div>

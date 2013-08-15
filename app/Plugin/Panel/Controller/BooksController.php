@@ -46,7 +46,7 @@ class BooksController extends PanelAppController {
             {
                 move_uploaded_file(
                     $this->request->data['Book']['cover']['tmp_name'],
-                    UPLOADS_DIR .'book/' . $this->request->data['Book']['cover']['name']
+                    IMG_UPLOADS_DIR .'book/' . $this->request->data['Book']['cover']['name']
                 );
 
                 // store the filename in the array to be saved to the db

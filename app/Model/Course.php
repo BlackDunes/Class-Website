@@ -4,11 +4,13 @@ class Course extends AppModel {
 		'Period' => array(
 			'className' => 'Period',
 			'foreignKey' => 'course_id',
-			'order'  => 'Period.block ASC'
+			'order'  => 'Period.block ASC',
+			'conditions' => array('Period.active' => '1'),
 		),
 		'Unit' => array(
 			'className' => 'Unit',
-			'foreignKey' => 'course_id'
+			'foreignKey' => 'course_id',
+			'order' => 'Unit.order ASC'
 		)
 	);
 }

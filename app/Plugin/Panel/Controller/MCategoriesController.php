@@ -7,7 +7,7 @@ class MCategoriesController extends PanelAppController {
             {
                 move_uploaded_file(
                     $this->request->data['MCategory']['icon']['tmp_name'],
-                    UPLOADS_DIR .'mcat/' . $this->request->data['MCategory']['icon']['name']
+                    IMG_UPLOADS_DIR .'mcat/' . $this->request->data['MCategory']['icon']['name']
                 );
 
                 // store the filename in the array to be saved to the db

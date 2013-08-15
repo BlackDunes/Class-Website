@@ -13,7 +13,7 @@
 </div>
 	<div class="navElement">
 <?php echo $this->Html->link('Units',
-'/panel/books'); ?>
+'/panel/units'); ?>
 </div>
 <div class="navElement">
 	<?php echo $this->Html->link('Log Out',

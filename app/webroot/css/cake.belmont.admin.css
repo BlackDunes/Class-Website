@@ -29,12 +29,12 @@ body {
 	margin: 0;
 }
 a {
-	color: #003d4c;
-	text-decoration: underline;
+	color: black;
+	text-decoration: none;
 }
 a:hover {
-	color: #367889;
-	text-decoration:none;
+	color: #424242;
+	text-decoration: underline;
 }
 a img {
 	border:none;
@@ -87,6 +87,25 @@ p {
 	font-weight: 600;
 }
 
+.adminButton {
+	padding: 10px;
+	background: #f98d7b;
+	color: #FAFAFA;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	border-radius: 3px;
+	letter-spacing: 1px;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: table;
+}
+
+.adminButton a:link, .adminButton a:visited {
+	color: #FAFAFA;
+}
+
 /** Admin Main Elements **/
 
 #navigation {
@@ -124,6 +143,42 @@ p {
 
 .navElement:hover {
 	background: #FAFAFA;
+}
+
+.contentWidthItem {
+	width: 650px;
+	padding: 10px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	background-color: #7bd1f9;
+	font-size: 26px;
+	font-weight: 600;
+	border-radius: 3px;
+}
+
+.itemInactive {
+	background-color: #FAFAFA;
+	font-weight: 400;
+	color: #E3E3E3;
+}
+
+.itemInactive a:link, .itemInactive a:visited {
+	color: #E3E3E3;
+}
+
+.contentWidthRight {
+	width: 100px;
+	float: right;
+	text-align: right;
+}
+
+.green {
+	background: #92F7CF;
+}
+
+.theAuthor {
+	font-size: 16px;
+	font-weight: 600;
 }
 
 /** Admin Page Calendar **/
@@ -210,7 +265,7 @@ p {
 }
 
 .dayToday {
-	box-shadow: 0px 0px 0px 4px #92F7CF;
+	box-shadow: 0px 0px 0px 2px #424242;
 }
 
 .panelCalDayBody {
@@ -435,7 +490,7 @@ img.bookCover {
 	background: #E3E3E3;
 	text-transform: none;
 	letter-spacing: 0px;
-	font-weight: 400;
+	font-weight: 600;
 }
 
 .periodDayItemBlank {
@@ -470,6 +525,31 @@ img.bookCover {
 	padding-top: 2px;
 }
 
+.mUnitHolder {
+	width: 260px;
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.holderActive {
+	background-color: #FAFAFA;
+	border-radius: 3px;
+}
+
+.addMaterials {
+	font-size: 14px;
+	text-transform: none;
+	letter-spacing: 0px;
+}
+
+.mDivider + .mDivider {
+	margin-top: 15px;
+}
 /** Period Page Calendar **/
 
 .classHeader {

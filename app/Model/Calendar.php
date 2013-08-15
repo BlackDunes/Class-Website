@@ -43,7 +43,7 @@ class Calendar extends AppModel {
 
                         $Periods = ClassRegistry::init('Periods');
                         $Courses = ClassRegistry::init('Courses');
-                        $dayPeriods = $Periods->findAllByAb($dateDetails['Days']['ab'], array(), array('Periods.block' => 'desc'));
+                        $dayPeriods = $Periods->findAllByAbAndActive($dateDetails['Days']['ab'], 1, array(), array('Periods.block' => 'desc'));
 
                         foreach ($dayPeriods as $dayPeriods) {
 
