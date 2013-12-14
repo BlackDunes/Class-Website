@@ -88,6 +88,13 @@ p {
 	margin-left: 80px;
 }
 
+.boldItem {
+	font-weight: 800;
+}
+
+.colorItem {
+	color: #BD1E1E;;
+}
 /** Main Landing Page **/
 
 .theLeftSide {
@@ -192,8 +199,10 @@ img.bookCover {
 	width: 850px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font-size: 40px;
+	font-size: 45px;
+	letter-spacing: 2px;
 	font-weight: 800;
+	text-align: center;
 }
 .weekCalHolder {
 	position: relative;
@@ -364,6 +373,132 @@ img.bookCover {
 	top: 70px;
 }
 
+/** Period Page Unit and Materials **/
+
+.perLeft {
+	width: 520px;
+	float: left;
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.perLeftUnit {
+	width: 380px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 20px;
+	background: #7bd1f9;
+	font-size: 45px;
+	font-weight: 600;
+	border-radius: 3px;
+	text-transform: none;
+	letter-spacing: 0px;
+}
+
+.perLeftAuthor {
+	font-size: 20px;
+}
+
+.perRight {
+	width: 250px;
+	float: right;
+	background: #FAFAFA;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-radius: 3px;
+	box-shadow: 2px 2px 0px #E3E3E3;
+}
+
+.perRightItemHolder {
+	width: 250px;
+	padding-bottom:10px;
+	padding-top: 15px;
+}
+
+.perRightItemHolder + .perRightItemHolder {
+	border-top: 1px solid #EDEDED;
+}
+
+.rightItemImage {
+	float: left;
+	width: 25px;
+	height: 25px;
+	padding-top: 5px;
+}
+
+.rightItemName {
+	float: right;
+	width: 225px;
+	font-size: 18px;
+}
+
+/** Journal Entries **/
+
+.journalHeader {
+	width: 520px;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	font-size: 22px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.journalHolder {
+	width: 400px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 15px;
+	background: #FAFAFA;
+	font-size: 16px;
+	font-weight: 400;
+	border-radius: 3px;
+	text-transform: none;
+	letter-spacing: 0px;
+	text-transform: none;
+}
+
+.journalHolder + .journalHolder {
+	margin-top: 15px;
+}
+
+.journalEntryHeader {
+	width: 400px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.journalHeaderLeft {
+	font-size: 24px;
+	font-weight: 800;
+	text-align: left;
+	width: 180px;
+	float: left;
+}
+
+.journalHeaderRight {
+	font-size: 14px;
+	font-weight: 300;
+	text-align: right;
+	width: 180px;
+	float: right;
+	padding-top: 7px;
+}
+
+.journalEntryEntry {
+	width: 400px;
+	padding-top: 10px;
+}
+
 /** Layout **/
 #container {
 	text-align: left;
@@ -399,11 +534,31 @@ img.bookCover {
 	width: 850px;
 	text-align: left;
 }
+
 #footer {
 	clear: both;
-	padding: 6px 10px;
 	text-align: right;
+	width: 100%;
+	background: #FAFAFA;
+	font-size: 12px;
+}
+
+.footerInner {
 	width: 850px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.footerLeft {
+	width: 400px;
+	float: left;
+	text-align: left;
+}
+
+.footerRight {
+	width: 400px;
+	float: right;
+	text-align: right;
 }
 
 /** containers **/

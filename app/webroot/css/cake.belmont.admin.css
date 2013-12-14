@@ -176,9 +176,43 @@ p {
 	background: #92F7CF;
 }
 
+.contentWidthLeft {
+	width: 500px;
+	float: left;
+}
 .theAuthor {
 	font-size: 16px;
 	font-weight: 600;
+}
+
+/** Journal Entry Page **/
+
+.journalEntryDate {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.journalEntryNumber {
+	float: left;
+	padding-right: 20px;
+	font-size: 40px;
+	font-weight: 800;
+	color: #FAFAFA;
+	text-align: left;
+}
+
+.journalEntryEntry {
+	float: left;
+	width: 400px;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.journalEntryInactive {
+	float: left;
+	width: 500px;
+	font-size: 20px;
+	font-weight: 400;
 }
 
 /** Admin Page Calendar **/
@@ -462,13 +496,12 @@ img.bookCover {
 
 .periodDayHolder {
 	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	background: #FAFAFA;
 	width: 310px;
 	border-radius: 3px;
 	padding: 10px;
-	margin-top: 20px;
+	margin-top: 10px;
 	float: left;
 }
 
@@ -490,8 +523,19 @@ img.bookCover {
 	background: #E3E3E3;
 	text-transform: none;
 	letter-spacing: 0px;
-	font-weight: 600;
+	font-weight: 400;
 }
+
+.periodDayItemLeft {
+	width: 240px;
+	float: left;
+}
+
+.periodDayItemRight {
+	width: 20px;
+	float: right;
+}
+
 
 .periodDayItemBlank {
 	margin-top: 10px;
@@ -506,15 +550,51 @@ img.bookCover {
 	font-weight: 600;
 }
 
+.periodDayCheckboxHolder {
+	width: 310px;
+	padding: 0px;
+}
+.periodDayCheckbox {
+	padding: 0;
+	font-size: 14px;
+	font-weight: 300;
+	width: 130px;
+	float: left;
+	clear: none;
+}
+
+.boldItem {
+	font-weight: 800;
+}
+
+.colorItem {
+	color: #BD1E1E;
+}
+
 /** materials management page **/
 
 .mCatHolder {
-	width: 280px;
+	width: 300px;
 	padding: 5px;
-	margin-top: 5px;
+	padding-top: 10px;
 	text-transform: none;
 	letter-spacing: 0px;
+	font-size: 15px;
+	font-weight: 300;
 	border-top: 1px solid #E3E3E3;
+	margin-top: 5px;
+}
+
+.matHolderLeft {
+	width: 190px;
+	float: left;
+}
+
+.matHolderRight {
+	width: 70px;
+	float: right;
+	text-align: right;
+
 }
 
 .mCatIcon {
@@ -527,18 +607,23 @@ img.bookCover {
 
 .mUnitHolder {
 	width: 260px;
-	padding-left: 10px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding: 5px;
 	margin-top: 3px;
 	margin-bottom: 3px;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 300;
+	background-color: #FAFAFA;
+	border-radius: 3px;
 }
 
 .holderActive {
-	background-color: #FAFAFA;
-	border-radius: 3px;
+	background-color: #7bd1f9;
+}
+
+.mUnitHolderRight {
+	width: 20px;
+	float: right;
+	text-align: right;
 }
 
 .addMaterials {
@@ -913,11 +998,12 @@ form {
 }
 fieldset {
 	border: none;
-	margin-bottom: 1em;
-	padding: 16px 10px;
+	padding: 0;
+	font-weight: 300;
+	display: table-column;
+	width: 100%;
 }
 fieldset legend {
-	color: #e32;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -935,12 +1021,12 @@ fieldset fieldset div {
 }
 form div {
 	clear: both;
-	margin-bottom: 0em;
-	padding: .5em;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	vertical-align: text-top;
 }
+
 form .input {
-	color: #444;
 }
 form .required {
 	font-weight: bold;
@@ -961,10 +1047,10 @@ label {
 }
 input, textarea {
 	clear: both;
-	font-size: 140%;
-	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
-	padding: 1%;
-	width:98%;
+	font-size: 22px;
+	padding: 10px;
+	border: 1px solid #E3E3E3;
+
 }
 select {
 	clear: both;
@@ -1002,19 +1088,16 @@ input[type=submit] {
 	display: inline;
 	font-size: 110%;
 	width: auto;
+	padding: 10px;
 }
 form .submit input[type=submit] {
-	background:#62af56;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#76BF6B), to(#3B8230));
-	background-image: -webkit-linear-gradient(top, #76BF6B, #3B8230);
-	background-image: -moz-linear-gradient(top, #76BF6B, #3B8230);
-	border-color: #2d6324;
-	color: #fff;
-	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
-	padding: 8px 10px;
+	background: #f98d7b;
+	color: #FAFAFA;
+	border: 1px solid #f98d7b;
 }
 form .submit input[type=submit]:hover {
-	background: #5BA150;
+		background: #7bd1f9;
+		border: 1px solid #7bd1f9;
 }
 /* Form errors */
 form .error {
@@ -1049,8 +1132,8 @@ form .error-message {
 .message {
 	clear: both;
 	color: #fff;
-	font-size: 140%;
-	font-weight: bold;
+	font-size: 20px;
+	font-weight: 600;
 	margin: 0 0 1em 0;
 	padding: 5px;
 }
@@ -1062,26 +1145,14 @@ form .error-message {
 .notice,
 p.error,
 .error-message {
-	background: #ffcc00;
-	background-repeat: repeat-x;
-	background-image: -moz-linear-gradient(top, #ffcc00, #E6B800);
-	background-image: -ms-linear-gradient(top, #ffcc00, #E6B800);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#E6B800));
-	background-image: -webkit-linear-gradient(top, #ffcc00, #E6B800);
-	background-image: -o-linear-gradient(top, #ffcc00, #E6B800);
-	background-image: linear-gradient(top, #ffcc00, #E6B800);
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background: #f98d7b;
 	margin-bottom: 10px;
 	margin-top: 10px;
 	padding: 7px 14px;
-	color: #404040;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	color: #FAFAFA;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 .success,
 .message,
@@ -1089,16 +1160,8 @@ p.error,
 p.error,
 .error-message {
 	clear: both;
-	color: #fff;
-	background: #c43c35;
-	background-repeat: repeat-x;
-	background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
-	background-image: -ms-linear-gradient(top, #ee5f5b, #c43c35);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ee5f5b), to(#c43c35));
-	background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35);
-	background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
-	background-image: linear-gradient(top, #ee5f5b, #c43c35);
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+	color: #FAFAFA;
+	background: #f98d7b;
 }
 .success {
 	clear: both;
@@ -1156,27 +1219,15 @@ input[type=submit],
 .actions ul li a,
 .actions a {
 	font-weight:normal;
-	padding: 4px 8px;
-	background: #dcdcdc;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#dcdcdc));
-	background-image: -webkit-linear-gradient(top, #fefefe, #dcdcdc);
-	background-image: -moz-linear-gradient(top, #fefefe, #dcdcdc);
-	background-image: -ms-linear-gradient(top, #fefefe, #dcdcdc);
-	background-image: -o-linear-gradient(top, #fefefe, #dcdcdc);
-	background-image: linear-gradient(top, #fefefe, #dcdcdc);
-	color:#333;
+	padding: 10px;
+	background: #f98d7b;
+	color:#FAFAFA;
 	border:1px solid #bbb;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	text-decoration: none;
-	text-shadow: #fff 0px 1px 0px;
 	min-width: 0;
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-user-select: none;
-	user-select: none;
 }
 .actions ul li a:hover,
 .actions a:hover {

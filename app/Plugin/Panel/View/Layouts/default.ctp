@@ -22,6 +22,7 @@ $cakeDescription = __d('cake_dev', 'The Belmont Admin Panel');
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,900,300italic,400italic,600italic,900italic|Acme' rel='stylesheet' type='text/css'>
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:

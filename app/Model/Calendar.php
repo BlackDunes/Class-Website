@@ -173,7 +173,7 @@ class Calendar extends AppModel {
             {
             	$today = 0;
                 $theweekday = date('D', strtotime($year."W".$week_number.$day));
-                $themonth = date('F', strtotime($year."W".$week_number.$day));
+                $themonth = date('M', strtotime($year."W".$week_number.$day));
                 $thedaynum = date('j', strtotime($year."W".$week_number.$day));
 
                 $sqlDate = date('Y-m-d', strtotime($year."W".$week_number.$day));

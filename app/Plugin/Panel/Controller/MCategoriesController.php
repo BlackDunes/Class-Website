@@ -26,4 +26,28 @@ class MCategoriesController extends PanelAppController {
         }
     }
 
+    public function edit($id = null) {
+        if (!$id) {
+            throw new NotFoundException(__('Invalid category'));
+        }
+
+        $category = $this->MCategory->findById($id);
+        if (!$category) {
+            throw new NotFoundException(__('Invalid category'));
+        }
+
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->MCategory->id = $id;
+            if ($this->MCategory->save($this->request->data)) {
+             $this->Session->setFlash(__('The category has been updated.'));
+            return $this->redirect(array('controller' => 'materials', 'action' => 'index'));
+            }
+            $this->Session->setFlash(__('Unable to update the category.'));
+        }
+
+        if (!$this->request->data) {
+            $this->request->data = $category;
+        }
+    }
+
 }

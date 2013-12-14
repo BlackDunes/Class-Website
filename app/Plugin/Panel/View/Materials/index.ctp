@@ -9,7 +9,9 @@
 			<?php echo $course['Course']['name']; ?>
 			<?php foreach ($course['Unit'] as $unit): ?>
 			<div class="mUnitHolder<?php if ($unit['id'] == $course['Course']['active_unit']) { echo ' holderActive'; } ?>">
+				<?php if ($unit['type'] == 2) { echo '<i>'; } ?>
 				<?php echo $this->Html->link($unit['name'], '/panel/materials/add/'. $unit['id']); ?>
+				<?php if ($unit['type'] == 2) { echo '</i>'; } ?>
 			</div>
 			<?php endforeach; ?>
 
@@ -20,12 +22,18 @@
 	Material Categories
 	<?php foreach ($categories as $categories): ?>
 	<div class="mCatHolder">
-		<div class="mCatIcon">
-			<?php echo $this->Html->image('uploads/mcat/'.$categories['MCategory']['icon'], array('alt' => $categories['MCategory']['name'])); ?>
+		<div class="matHolderLeft">
+			<div class="mCatIcon">
+				<?php echo $this->Html->image('uploads/mcat/'.$categories['MCategory']['icon'], array('alt' => $categories['MCategory']['name'])); ?>
+			</div>
+			<span style="color: #<?php echo $categories['MCategory']['color']; ?>">
+				<?php echo $categories['MCategory']['name']; ?>
+			</span>
 		</div>
-		<span style="color: #<?php echo $categories['MCategory']['color']; ?>">
-		<?php echo $categories['MCategory']['name']; ?>
-		</span>
+		<div class="matHolderRight">
+				<?php echo $this->Html->link($this->Html->image('edit.png', array('alt' => 'Edit')), '/panel/m_categories/edit/'.$categories['MCategory']['id'], array('escape' => false)); ?>
+		</div>
+		<div class="clear"></div>
 	</div>
 	<?php endforeach; ?>
 	<div class="adminButton">

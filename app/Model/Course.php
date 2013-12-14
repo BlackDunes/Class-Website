@@ -11,6 +11,12 @@ class Course extends AppModel {
 			'className' => 'Unit',
 			'foreignKey' => 'course_id',
 			'order' => 'Unit.order ASC'
+		),
+		'JournalEntry' => array(
+			'className' => 'JournalEntry',
+			'foreignKey' => 'course_id',
+			'order' => 'JournalEntry.number DESC',
+			'conditions' => array('JournalEntry.active' => '1')
 		)
 	);
 }

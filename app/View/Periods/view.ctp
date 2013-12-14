@@ -48,7 +48,7 @@ array('controller' => 'periods', 'action' => 'view', $id, $offset +1)); ?>
 				</div>
 				<ul>
 				<?php foreach ($thecal['assignments'] as $assign): ?>
-					<li><span class="dayAssignHomeItem"><?php echo $assign['text']; ?></span></li>
+					<li><span class="dayAssignHomeItem<?php if ($assign['bold'] == 1) { echo ' boldItem'; } ?><?php if ($assign['color'] == 1) { echo ' colorItem'; } ?>"><?php echo $assign['text']; ?></span></li>
 				<?php endforeach; ?>
 				</ul>
 			</div>
@@ -58,7 +58,7 @@ array('controller' => 'periods', 'action' => 'view', $id, $offset +1)); ?>
 				</div>
 				<ul>
 				<?php foreach ($thecal['homework'] as $homework): ?>
-					<li><span class="dayAssignHomeItem"><?php echo $homework['text']; ?></span></li>
+					<li><span class="dayAssignHomeItem<?php if ($homework['bold'] == 1) { echo ' boldItem'; } ?><?php if ($homework['color'] == 1) { echo ' colorItem'; } ?>"><?php echo $homework['text']; ?></span></li>
 				<?php endforeach; ?>
 				</ul>
 			</div>
@@ -87,8 +87,56 @@ array('controller' => 'periods', 'action' => 'view', $id, $offset +1)); ?>
 <?php endforeach; ?>
 <div class="clear"></div>
 </div>
+<div class="perLeft">
+	We are currently studying...
+	<div class="perLeftUnit">
+		<?php if ($activeUnit['Unit']['type'] == 2) { echo '<i>'; } ?>
+		<?php echo $activeUnit['Unit']['name']; ?>
+		<?php if ($activeUnit['Unit']['type'] == 2) { echo '</i><div class="perLeftAuthor">by '.$activeUnit['Unit']['author'].'</div>'; } ?>
+	</div>
+	<?php if ($period['Course']['journal'] == 1): ?>
+	<div class="journalHeader">
+		Journal Entries
+	</div>
+	<?php foreach ($journalEntries as $entries): ?>
+	<div class="journalHolder">
+		<div class="journalEntryHeader">
+			<div class="journalHeaderLeft">
+				<?php echo $this->Html->image('journal.png', array('alt' => 'Journal Entry')); ?> <?php echo $entries['JournalEntry']['number']; ?>
+			</div>
+			<div class="journalHeaderRight">
+				<?php $nicedate = date('D\. F jS\, Y', strtotime($entries['JournalEntry']['date'])) ?>
+				<?php echo $nicedate; ?>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="journalEntryEntry">
+			<?php echo $entries['JournalEntry']['entry']; ?>
+		</div>
+	</div>
+	<?php endforeach; ?>
+	<?php endif; ?>
+</div>
+<div class="perRight">
+	<?php foreach ($allUnits as $thisUnit): ?>
+	<?php foreach ($thisUnit['Material'] as $material): ?>
 
-
-
-
-<br /> <br /><br /><br /><br />
+	<div class="perRightItemHolder">
+		<div class="rightItemImage">
+			<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+		</div>
+		<div class="rightItemName">
+			<span style="color: #<?php echo $material['MCategory']['color']; ?>">
+			<?php if ($material['local'] == 1): ?>
+			<?php echo $this->Html->link($material['name'], '/files/uploads/materials/'. $thisUnit['Unit']['id'].'/'.$material['file'], array('target' => '_blank')); ?>
+			<?php else: ?>
+			<?php echo $this->Html->link($material['name'], $material['url'], array('target' => '_blank')); ?>
+			<?php endif; ?>
+			</span>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<?php endforeach; ?>
+	<?php endforeach; ?>
+</div>
+<div class="clear"></div>

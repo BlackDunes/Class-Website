@@ -8,6 +8,10 @@
 '/panel/courses'); ?>
 </div>
 	<div class="navElement">
+<?php echo $this->Html->link('Journal Entries',
+'/panel/journal_entries'); ?>
+</div>
+	<div class="navElement">
 <?php echo $this->Html->link('Materials',
 '/panel/materials'); ?>
 </div>

@@ -23,16 +23,24 @@
 		Public & Active:
 		<?php foreach ($m_active_public as $material): ?>
 		<div class="mCatHolder">
-			<div class="mCatIcon">
-				<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+			<div class="matHolderLeft">
+				<div class="mCatIcon">
+					<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+				</div>
+				<span style="color: #<?php echo $material['MCategory']['color']; ?>">
+					<?php if ($material['Material']['local'] == 1): ?>
+						<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
+					<?php else: ?>
+						<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
+				<?php endif; ?>
+				</span>
 			</div>
-			<span style="color: #<?php echo $material['MCategory']['color']; ?>">
-			<?php if ($material['Material']['local'] == 1): ?>
-			<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
-			<?php else: ?>
-			<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
-			<?php endif; ?>
-			</span>
+			<div class="matHolderRight">
+				<?php echo $this->Html->link($this->Html->image('delete.png', array('alt' => 'Delete')), '/panel/materials/delete/'.$material['Material']['id'], array('escape' => false), "Are you sure you wish to delete ". $material['Material']['name']."?"); ?>
+				<?php echo $this->Html->link($this->Html->image('private.png', array('alt' => 'Make Private')), '/panel/materials/toggle_private/'.$material['Material']['id'], array('escape' => false)); ?>
+				<?php echo $this->Html->link($this->Html->image('inactive.png', array('alt' => 'Make Inactive')), '/panel/materials/toggle_active/'.$material['Material']['id'], array('escape' => false)); ?>
+			</div>
+			<div class="clear"></div>
 		</div>
 		<?php endforeach; ?>
 	</div>
@@ -40,16 +48,24 @@
 		Public & Inactive:
 		<?php foreach ($m_inactive_public as $material): ?>
 		<div class="mCatHolder">
-			<div class="mCatIcon">
-				<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+			<div class="matHolderLeft">
+				<div class="mCatIcon">
+					<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+				</div>
+				<span style="color: #<?php echo $material['MCategory']['color']; ?>">
+					<?php if ($material['Material']['local'] == 1): ?>
+						<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
+					<?php else: ?>
+						<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
+				<?php endif; ?>
+				</span>
 			</div>
-			<span style="color: #<?php echo $material['MCategory']['color']; ?>">
-			<?php if ($material['Material']['local'] == 1): ?>
-			<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
-			<?php else: ?>
-			<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
-			<?php endif; ?>
-			</span>
+			<div class="matHolderRight">
+				<?php echo $this->Html->link($this->Html->image('delete.png', array('alt' => 'Delete')), '/panel/materials/delete/'.$material['Material']['id'], array('escape' => false), "Are you sure you wish to delete ". $material['Material']['name']."?"); ?>
+				<?php echo $this->Html->link($this->Html->image('private.png', array('alt' => 'Make Private')), '/panel/materials/toggle_private/'.$material['Material']['id'], array('escape' => false)); ?>
+				<?php echo $this->Html->link($this->Html->image('active.png', array('alt' => 'Make Active')), '/panel/materials/toggle_active/'.$material['Material']['id'], array('escape' => false)); ?>
+			</div>
+			<div class="clear"></div>
 		</div>
 		<?php endforeach; ?>
 	</div>
@@ -57,16 +73,23 @@
 		Private:
 		<?php foreach ($m_private as $material): ?>
 		<div class="mCatHolder">
-			<div class="mCatIcon">
-				<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+			<div class="matHolderLeft">
+				<div class="mCatIcon">
+					<?php echo $this->Html->image('uploads/mcat/'.$material['MCategory']['icon'], array('alt' => $material['MCategory']['name'])); ?>
+				</div>
+				<span style="color: #<?php echo $material['MCategory']['color']; ?>">
+					<?php if ($material['Material']['local'] == 1): ?>
+						<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
+					<?php else: ?>
+						<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
+				<?php endif; ?>
+				</span>
 			</div>
-			<span style="color: #<?php echo $material['MCategory']['color']; ?>">
-			<?php if ($material['Material']['local'] == 1): ?>
-			<?php echo $this->Html->link($material['Material']['name'], '/files/uploads/materials/'. $unit['Unit']['id'].'/'.$material['Material']['file'], array('target' => '_blank')); ?>
-			<?php else: ?>
-			<?php echo $this->Html->link($material['Material']['name'], $material['Material']['url'], array('target' => '_blank')); ?>
-			<?php endif; ?>
-			</span>
+			<div class="matHolderRight">
+				<?php echo $this->Html->link($this->Html->image('delete.png', array('alt' => 'Delete')), '/panel/materials/delete/'.$material['Material']['id'], array('escape' => false), "Are you sure you wish to delete ". $material['Material']['name']."?"); ?>
+				<?php echo $this->Html->link($this->Html->image('public.png', array('alt' => 'Make Public')), '/panel/materials/toggle_private/'.$material['Material']['id'], array('escape' => false)); ?>
+			</div>
+			<div class="clear"></div>
 		</div>
 		<?php endforeach; ?>
 	</div>
