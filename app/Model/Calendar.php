@@ -114,13 +114,37 @@ class Calendar extends AppModel {
 
                         } else {
 
-                            array_push($weekArray, array('error' => 1,
+                            if ($dateDetails['Days']['ab'] == 'M') {
+
+                                array_push($weekArray, array('abday' => 'M',
+                                                            'month' => $theMonth,
+                                                            'daynumber' => $theDayNumber,
+                                                            'today' => $today,
+                                                            'sqldate' => $sqlDate,
+                                                            'dayId' => $dateDetails['Days']['id']
+                                                         )
+                                );
+
+                            } elseif ($dateDetails['Days']['ab'] == 'F') {
+
+                                array_push($weekArray, array('abday' => 'F',
+                                                            'month' => $theMonth,
+                                                            'daynumber' => $theDayNumber,
+                                                            'today' => $today,
+                                                            'sqldate' => $sqlDate,
+                                                            'dayId' => $dateDetails['Days']['id']
+                                                         )
+                                );
+                                } else {
+
+                                array_push($weekArray, array('error' => 1,
                                                             'month' => $theMonth,
                                                             'daynumber' => $theDayNumber,
                                                             'today' => $today,
                                                             'sqldate' => $sqlDate
                                                         )
-                            );
+                                );
+                            }
 
                         }
 

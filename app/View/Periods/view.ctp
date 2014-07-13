@@ -64,7 +64,33 @@ array('controller' => 'periods', 'action' => 'view', $id, $offset +1)); ?>
 			</div>
 
 
+		<?php elseif ((isset($thecal['abday'])) and (($thecal['abday'] == "M") or ($thecal['abday'] == "F"))): ?>
 
+			<?php if ($thecal['abday'] == "M"): ?>
+
+				<?php if (isset($thecal['halfDay'])): ?>
+					<div class="dayHalfDay">
+						Half Day
+					</div>
+				<?php endif; ?>
+				<div class="dayBigAlert">
+					Midterms
+				</div>
+
+			<?php endif; ?>
+			<?php if ($thecal['abday'] == "F"): ?>
+
+				<?php if (isset($thecal['halfDay'])): ?>
+					<div class="dayHalfDay">
+						Half Day
+					</div>
+				<?php endif; ?>
+				<div class="dayBigAlert">
+					Finals
+				</div>
+
+			<?php endif; ?>
+		
 		<?php elseif (isset($thecal['noClass'])): ?>
 			<?php if (isset($thecal['halfDay'])): ?>
 				<div class="dayHalfDay">

@@ -95,7 +95,23 @@ p {
 .colorItem {
 	color: #BD1E1E;;
 }
+
+/** Summer Landing Page **/
+
+.bookHolderSummer {
+	width: 250px;
+	float: left;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.sLandingDesc {
+	width: 850px;
+	margin-bottom: 30px;
+	text-align: center;
+}
 /** Main Landing Page **/
+
 
 .theLeftSide {
 	float: left;
@@ -274,6 +290,14 @@ img.bookCover {
 
 .B_day {
 	background: #7be6f9;
+}
+
+.M_day {
+	background: #8C7BF9;
+}
+
+.F_day {
+	background: #7B9DF9;
 }
 
 .noSchool {

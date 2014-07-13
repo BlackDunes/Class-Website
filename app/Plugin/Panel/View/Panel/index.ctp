@@ -49,6 +49,18 @@
 					<?php echo "No School"; ?>
 					</div>
 				<?php endif; ?>
+				<?php if (isset($currDay["abday"])): ?>
+					<?php if ($currDay["abday"] == "M"): ?>
+						<div class="calDayBodyAlert">
+						<?php echo "Midterms"; ?>
+						</div>
+					<?php endif; ?>
+					<?php if ($currDay["abday"] == "F"): ?>
+						<div class="calDayBodyAlert">
+						<?php echo "Finals"; ?>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
 				<?php if (isset($currDay['classes'])): ?>
 					<?php for ($theNumber = 1; $theNumber <=5; $theNumber++): ?>
 						<?php if ($theNumber != 3): ?>

@@ -10,7 +10,7 @@ class CoursesController extends PanelAppController {
 
         $Periods = ClassRegistry::init('Period');
 		$this->set('periods', $Periods->find('all', array('conditions' => array('Period.course_id' => $courseid),
-                                                        'order' => 'Period.block ASC, Period.ab ASC')));
+                                                        'order' => 'Period.active DESC, Period.year DESC, Period.block ASC, Period.ab ASC')));
 
     	$this->set('course', $this->Course->findById($courseid));
 	}
