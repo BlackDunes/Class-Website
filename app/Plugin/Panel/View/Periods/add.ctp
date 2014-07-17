@@ -18,7 +18,7 @@
         $veryNextYear = $thisYear + 2;
 
         echo $this->Form->input('year', array(
-    'type' => 'year',
+    'options' => array($lastYear => $lastYear . '-' . $thisYear, $thisYear => $thisYear . '-' . $nextYear, $nextYear => $nextYear . '-' . $veryNextYear),
     'label' => 'School Year'
 ));
         echo $this->Form->input('active');
