@@ -64,8 +64,27 @@ a img {
 #calTitle {
 	width: 900px;
 	font-weight: 800;
-	font-size: 30px;
+	font-size: 35px;
+	margin-bottom: 15px;
+}
+
+#legend {
+	width: 900px;
 	margin-bottom: 5px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	text-align: center;
+}
+
+#legendDay {
+	width: 200px;
+	float: left;
+}
+
+.legendAH {
+	width: 350px;
+	float: left;
 }
 
 .calRow {
@@ -113,6 +132,33 @@ a img {
 .calItem {
 	width: 329px;
 	padding-bottom: 5px;
+}
+
+.bold {
+	font-weight: 800;
+}
+
+.colored {
+	color: #8C1D1D;
+}
+
+
+#prevMonth {
+	width: 400px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: left;
+	float: left;
+	font-size: 25px;
+}
+
+#nextMonth {
+	width: 400px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: right;
+	float: right;
+	font-size: 25px;
 }
 
 /** Notices and Errors **/

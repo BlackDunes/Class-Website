@@ -105,6 +105,9 @@ class PeriodsController extends PanelAppController {
         $this->loadModel('Calendar');
         $this->set('theCalendar', $this->Calendar->periodCal($id, $offset));
 
+        $this->set('offset', $offset);
+        $this->set('perID', $id);
+
     }
 
 }
