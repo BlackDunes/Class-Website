@@ -340,4 +340,85 @@ class Calendar extends AppModel {
 
 		return $fullResult;
 	}
+
+      public function periodCal($id, $offset) {
+
+        App::uses('CakeTime', 'Utility');
+
+        $fullResult = array();
+        if (!$offset) {
+            $offset = 0;
+        }
+
+        $Periods = ClassRegistry::init('Periods');
+        $periodDetails = $Periods->findById($id);
+        $year = $periodDetails['Periods']['year'];
+
+        if ($offset <= 3) {
+            $theMonth = $offset + 9;
+            $theYear = $year;
+        } else {
+            $theMonth = $offset - 3;
+            $theYear = $year + 1;
+        }
+
+        $theMonth = sprintf('%02s', $theMonth);
+
+        $dateBeginning = $theYear . '-' . $theMonth;
+
+        $dayConditions = array('Days.date LIKE' => $dateBeginning . '%', 'Days.ab' => $periodDetails['Periods']['ab']);
+        $Days = ClassRegistry::init('Days');
+        $theDates = $Days->find('all', array(
+            'conditions' => $dayConditions,
+            'order' => 'Days.date ASC',
+            'fields' => array('Days.date', 'Days.id', 'Days.halfday')
+            )
+        );
+
+        $datesInfo = array();
+
+        foreach ($theDates as $theDates) {
+
+            $assConditions = array('Assignments.day_id' => $theDates['Days']['id'], 'Assignments.period_id' => $id);
+            $hwConditions = array('Homeworks.day_id' => $theDates['Days']['id'], 'Homeworks.period_id' => $id);
+
+            $Assignments = ClassRegistry::init('Assignments');
+            $dayAssign = $Assignments->find('all', array(
+                'conditions' => $assConditions,
+                'fields' => array('Assignments.text', 'Assignments.bold', 'Assignments.color'),
+                'order' => 'Assignments.id ASC'
+                )
+            );
+
+            $Homeworks = ClassRegistry::init('Homeworks');
+            $dayHomework = $Homeworks->find('all', array(
+                'conditions' => $hwConditions,
+                'fields' => array('Homeworks.text', 'Homeworks.bold', 'Homeworks.color'),
+                'order' => 'Homeworks.id ASC'
+                )
+            );
+
+            $theweekday = date('l', strtotime($theDates['Days']['date']));
+            $thedaynumber = date('j', strtotime($theDates['Days']['date']));
+
+            array_push($datesInfo, array('daynumber' => $thedaynumber,
+                                        'weekday' => $theweekday,
+                                        'halfday' => $theDates['Days']['halfday'],
+                                        'assignments' => $dayAssign,
+                                        'homework' => $dayHomework)
+            );
+
+        }
+
+        $dateObj   = DateTime::createFromFormat('!m', $theMonth);
+        $monthName = $dateObj->format('F');
+
+        array_push($fullResult, array('year' => $theYear,
+                                    'month' => $monthName,
+                                    'dates' => $datesInfo
+                                    )
+        );
+
+        return $fullResult;
+    }
 }

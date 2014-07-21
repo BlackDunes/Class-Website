@@ -96,4 +96,15 @@ class PeriodsController extends PanelAppController {
         }
     }
 
+    public function generateCal($id, $offset=0) {
+
+        $this->set('title_for_layout', 'Cal');
+        $this->layout = 'bare';
+        $this->set('period', $this->Period->findById($id));
+
+        $this->loadModel('Calendar');
+        $this->set('theCalendar', $this->Calendar->periodCal($id, $offset));
+
+    }
+
 }
